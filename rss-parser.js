@@ -2,9 +2,9 @@ var feedParser  = require('feedparser')
 	, fs 		= require('fs')
 	, request 	= require('request');
 
+var us = JSON.parse(fs.readFileSync('./html/places.json'));
 
 function findCoordinates(place) {
-	var us = JSON.parse(fs.readFileSync('./html/places.json'));
 	var placeData = us.features;
 	var coordinates;
 
