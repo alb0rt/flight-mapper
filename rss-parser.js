@@ -12,6 +12,7 @@ function findCoordinates(place) {
 	for(var i = 0; i < placeData.length; i++) {
 		if(placeData[i].properties.NAME == place) {
 			coordinates = placeData[i].geometry.coordinates;
+			console.log(placeData[i].properties.NAME);
 		}
 	}
 
@@ -25,7 +26,7 @@ function dealExists(data, url) {
 			return true;
 	}
 
-	return false
+	return false;
 }
 
 function createPathData(list){
@@ -162,7 +163,7 @@ exports.parseTfdRss = function() {
 			, meta = this.meta;
 
 		while ( item = stream.read()) {
-			var title = parseTitle(item.title, item.pubDate, item.url);
+			var title = parseTitle(item.title, item.pubDate, item.guid);
 			if(title) {
 				dealList.push(title);
 			}
@@ -192,7 +193,7 @@ exports.parseTfdRss = function() {
 				} else {
 					json.from = slice[2];
 				}
-				json.to = slice[3];
+				json.to = slice[3].trim();
 				json.date = date;
 				json.url = url;
 			}
