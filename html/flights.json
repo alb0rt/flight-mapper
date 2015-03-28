@@ -189,7 +189,7 @@
                     "from": "Los Angeles",
                     "to": "Anchorage",
                     "date": "2014-12-04T12:00:55.000Z",
-                    "guid": "http://www.theflightdeal.com/?p=54322"
+                    "url": "http://www.theflightdeal.com/?p=54322"
                 }
             },
             {
@@ -213,7 +213,7 @@
                     "from": "Philadelphia",
                     "to": "Eugene",
                     "date": "2014-12-06T12:05:57.000Z",
-                    "guid": "http://www.theflightdeal.com/?p=54403"
+                    "url": "http://www.theflightdeal.com/?p=54403"
                 }
             },
             {
@@ -237,7 +237,7 @@
                     "from": "Los Angeles",
                     "to": "Charleston",
                     "date": "2014-12-06T12:00:36.000Z",
-                    "guid": "http://www.theflightdeal.com/?p=54388"
+                    "url": "http://www.theflightdeal.com/?p=54388"
                 }
             },
             {
@@ -261,7 +261,7 @@
                     "from": "San Francisco",
                     "to": "West Palm Beach",
                     "date": "2014-12-06T11:45:39.000Z",
-                    "guid": "http://www.theflightdeal.com/?p=54397"
+                    "url": "http://www.theflightdeal.com/?p=54397"
                 }
             },
             {
@@ -285,7 +285,7 @@
                     "from": "New York",
                     "to": "Sacramento",
                     "date": "2014-12-06T11:35:13.000Z",
-                    "guid": "http://www.theflightdeal.com/?p=54379"
+                    "url": "http://www.theflightdeal.com/?p=54379"
                 }
             },
             {
@@ -309,7 +309,7 @@
                     "from": "Los Angeles",
                     "to": "Billings",
                     "date": "2014-12-10T12:00:17.000Z",
-                    "guid": "http://www.theflightdeal.com/?p=54532"
+                    "url": "http://www.theflightdeal.com/?p=54532"
                 }
             },
             {
@@ -333,7 +333,7 @@
                     "from": "Seattle",
                     "to": "San Antonio",
                     "date": "2014-12-13T12:05:09.000Z",
-                    "guid": "http://www.theflightdeal.com/?p=54656"
+                    "url": "http://www.theflightdeal.com/?p=54656"
                 }
             },
             {
@@ -357,7 +357,7 @@
                     "from": "Newark",
                     "to": "Honolulu",
                     "date": "2015-03-27T10:35:42.000Z",
-                    "guid": "http://www.theflightdeal.com/?p=58973"
+                    "url": "http://www.theflightdeal.com/?p=58973"
                 }
             }
         ]

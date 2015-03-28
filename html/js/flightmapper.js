@@ -117,7 +117,7 @@ d3.json("flights.json", function(error, us) {
         .style("z-index", "10")
         .style("visibility", "hidden");
 
-    // Create tooltip label with fille rtext
+    // Create tooltip label with filler text
 	tooltip.append("div")
         .attr("class", "arc-label")
         .text(function (d) {
@@ -127,13 +127,20 @@ d3.json("flights.json", function(error, us) {
     // Define mouse hover behavior
     arcHidden
         .on("mouseover", function (d) {
-            tooltip.style("visibility", "visible");
+            tooltip.style("visibility", "visible")
+            	.style("border", function() {
+            		var style = "1px solid ";
+            		if(colors[d.properties.airline])
+            			return style + colors[d.properties.airline];
+            		else
+            			return style + "black";
+            	});
             
             all_arcs
                 .transition()
                 .duration(500)
                 .style("stroke-width", function(d2) {
-                	if(d.properties.guid === d2.properties.guid) {
+                	if(d.properties.url === d2.properties.url) {
                 		return "5px";
                 	} else {
                 		return "1px";
@@ -157,7 +164,7 @@ d3.json("flights.json", function(error, us) {
                 .style("stroke-width", "2px");
         })
         .on("click", function(d) {
-            location.href = d.properties.guid;
+            location.href = d.properties.url;
         });
 
     var all_arcs = d3.selectAll(".arc");

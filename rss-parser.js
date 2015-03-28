@@ -18,10 +18,10 @@ function findCoordinates(place) {
 	return coordinates;
 }
 
-function dealExists(data, guid) {
+function dealExists(data, url) {
 
 	for(var i = 0; i < data.length; i++) {
-		if(data.arcs.features[i].properties.guid === guid)
+		if(data.arcs.features[i].properties.url === url)
 			return true;
 	}
 
@@ -76,7 +76,7 @@ function createPathData(list){
 
 			// check for duplicates
 			for(var j = 0; j < out.arcs.features.length; j++) {
-				if(out.arcs.features[j].properties.guid === list[i].guid){
+				if(out.arcs.features[j].properties.url === list[i].url){
 					dupe = true;
 					console.log("Deal exists");
 				}
@@ -162,7 +162,7 @@ exports.parseTfdRss = function() {
 			, meta = this.meta;
 
 		while ( item = stream.read()) {
-			var title = parseTitle(item.title, item.pubDate, item.guid);
+			var title = parseTitle(item.title, item.pubDate, item.url);
 			if(title) {
 				dealList.push(title);
 			}
@@ -174,7 +174,7 @@ exports.parseTfdRss = function() {
 		createPathData(dealList);
 	});
 
-	var parseTitle = function(title, date, guid) {
+	var parseTitle = function(title, date, url) {
 
 		var json;
 		var regex = /^(United|Delta|jetBlue|American|Alaska) – ([^:]*): ([^–]*)– ([^(.,]*)/;
@@ -182,7 +182,7 @@ exports.parseTfdRss = function() {
 		if(parsedTitle) {
 			var slice = parsedTitle.slice(1, 5);
 			if(slice.length == 4){
-				json = {airline : "", price : "", from : "", to : "", date: "", guid: ""};
+				json = {airline : "", price : "", from : "", to : "", date: "", url: ""};
 				json.airline = slice[0];
 				json.price = slice[1];
 				// "from" field may have a bug that results in extra blank space at end of string
@@ -194,7 +194,7 @@ exports.parseTfdRss = function() {
 				}
 				json.to = slice[3];
 				json.date = date;
-				json.guid = guid;
+				json.url = url;
 			}
 		}
 
