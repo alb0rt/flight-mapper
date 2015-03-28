@@ -3,14 +3,15 @@ text {
     font-family: "europa", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 10px;
     font-weight: 200;
-    pointer-events: none;
+    
 }
 
-body {
-    padding-top: 70px;
+.header {
+    height: 10px;
+    background-color: #4581b9;
 }
  
-.state{ fill: #f8f8f8;}
+.state{ fill: #fbfbfb;}
  
 .state:hover {
     opacity: 0.4;
@@ -68,4 +69,5 @@ body {
     font-size: 10px;
     font-weight: 200;
     text-anchor: middle;
+    pointer-events: none;
 }

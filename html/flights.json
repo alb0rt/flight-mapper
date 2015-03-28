@@ -142,6 +142,26 @@
                     -98.50925119896328,
                     29.48927904852593
                 ]
+            },
+            {
+                "type": "Point",
+                "properties": {
+                    "name": "Newark"
+                },
+                "coordinates": [
+                    -74.1700053321149,
+                    40.700421365413604
+                ]
+            },
+            {
+                "type": "Point",
+                "properties": {
+                    "name": "Honolulu"
+                },
+                "coordinates": [
+                    -157.8599437447736,
+                    21.308822302073963
+                ]
             }
         ]
     },
@@ -314,6 +334,30 @@
                     "to": "San Antonio",
                     "date": "2014-12-13T12:05:09.000Z",
                     "guid": "http://www.theflightdeal.com/?p=54656"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -74.1700053321149,
+                            40.700421365413604
+                        ],
+                        [
+                            -157.8599437447736,
+                            21.308822302073963
+                        ]
+                    ]
+                },
+                "properties": {
+                    "airline": "American",
+                    "price": "$599",
+                    "from": "Newark",
+                    "to": "Honolulu",
+                    "date": "2015-03-27T10:35:42.000Z",
+                    "guid": "http://www.theflightdeal.com/?p=58973"
                 }
             }
         ]

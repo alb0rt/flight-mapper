@@ -26,7 +26,9 @@ var path = d3.geo.path()
 var svg = d3.select("body").append("svg")
 //var svg = d3.select(".map").append("svg")
 	.attr("width", width)
-	.attr("height", height);
+	.attr("height", height)
+	.style("margin-right", "auto")
+	.style("margin-left", "auto");
 
 var stateGroup = svg.append("g");
 var pathGroup = svg.append("g");
@@ -93,7 +95,13 @@ d3.json("flights.json", function(error, us) {
     // Draw visible flight deal path
 	var arc = arcGroup.append("path")
         .attr("class", "arc")
-        .attr("d", path);
+        .attr("d", path)
+        .style("stroke", function(d) {
+        	if(colors[d.properties.airline])
+        		return colors[d.properties.airline];
+        	else
+        		return "black";
+        });
 
     // Create wider hidden path to make hovering easier
 	var arcHidden = arcGroup.append("path")
@@ -124,16 +132,6 @@ d3.json("flights.json", function(error, us) {
             all_arcs
                 .transition()
                 .duration(500)
-                .style("stroke", function(d2) {
-                	if(d.properties.airline === d2.properties.airline) {
-                		if(colors[d.properties.airline])
-                			return colors[d.properties.airline];
-                		else
-                			return "black";
-                	}
-                	else
-                		return "#b8b8b8";
-                })
                 .style("stroke-width", function(d2) {
                 	if(d.properties.guid === d2.properties.guid) {
                 		return "5px";
@@ -144,12 +142,6 @@ d3.json("flights.json", function(error, us) {
 
             d3.select(".arc-label")
             	.data(us.arcs.features)
-            	.style("color", function(d2) {
-            		if(colors[d.properties.airline])
-                			return colors[d.properties.airline];
-                		else
-                			return "black";
-            	})
             	.text(function () {
             		return d.properties.airline + " " + d.properties.price + ": " + d.properties.from + " - " + d.properties.to;
             	});
@@ -162,7 +154,6 @@ d3.json("flights.json", function(error, us) {
             all_arcs
                 .transition()
                 .duration(250)
-                .style("stroke", "#b8b8b8")
                 .style("stroke-width", "2px");
         })
         .on("click", function(d) {
